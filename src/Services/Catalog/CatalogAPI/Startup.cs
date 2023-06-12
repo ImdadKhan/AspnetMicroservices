@@ -1,3 +1,5 @@
+using Catalog.API.Data;
+using Catalog.API.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -11,7 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CatelogAPI
+namespace Catalog.API
 {
     public class Startup
     {
@@ -31,6 +33,9 @@ namespace CatelogAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CatelogAPI", Version = "v1" });
             });
+
+            services.AddScoped<ICatalogContext, CatalogContext>();
+            services.AddScoped<IProductRepository, ProdcutRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

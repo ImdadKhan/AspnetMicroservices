@@ -1,10 +1,10 @@
-﻿using CatelogAPI.Entities;
+﻿using Catalog.API.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CatelogAPI.Repositories
+namespace Catalog.API.Repositories
 {
     public interface IProductRepository
     {
